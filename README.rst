@@ -455,6 +455,17 @@ it into standard django config structures.
     }
 
 
+Installation
+------------
+
+This package can be installed from standard Python packages
+source pypi.org
+
+.. code-block:: sh
+
+    pip install django-confenv
+
+
 Credits
 -------
 

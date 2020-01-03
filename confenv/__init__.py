@@ -16,7 +16,7 @@ variables, with optional initialization from named file.
 
 __all__ = ('Env', 'Path', 'pyCompat', )
 
-VERSION = '0.9.1'
+VERSION = '0.9.2'
 __author__ = 'Vitaly Protsko'
 __version__ = tuple(VERSION.split('.'))
 

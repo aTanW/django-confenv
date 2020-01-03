@@ -1,0 +1,29 @@
+# before all scripts
+before_script:
+  - source /etc/profile
+  
+# package stages
+stages:
+  - build
+  - deploy
+
+run-build:
+  stage: build
+  script:
+    - python setup.py check
+    - python setup.py build
+    - python setup.py sdist bdist_wheel
+    - python setup.py --command-packages=stdeb.command bdist_deb
+
+  artifacts:
+    paths:
+      - dist/* 
+      - deb_dist/*.deb
+
+run-publish:
+  stage: deploy
+
+  script:
+    - twine upload --repository sftpi dist/* 
+    - twine upload --repository pypi dist/* 
+    - $CI_PROJECT_DIR/publish.sh django-confenv

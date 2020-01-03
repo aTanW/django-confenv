@@ -1,0 +1,14 @@
+# extended test .env
+STRTEST=str test value
+UNITEST=Тест байт
+BOOLTEST1=1
+BOOLTEST2=no
+INTTEST=54321
+FLOATEST=12.345
+JSONTEST={"hdr1":"val1", "hdr2": { "hdr21": "val21", "hdr22": "val22" }, "hdr3": [ 1, 2, 3 ] }
+LISTEST=a,b,c,d
+TUPLETEST=(9,8,7,6)
+DICTEST1=key1=val1,key2=val2,keyz=valz
+DICTEST2=keyA=valA,
+DICTYPE=strkey=strval;floatkey=5.43;boolkey=ok
+URLTEST=http://example.com/resource?flag=1&key=val

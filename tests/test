@@ -1,0 +1,6 @@
+# test .env
+TESTKEY=testvalue
+export TESTEXPORT=value
+FIRSTVAR=firstval
+MIDDLE=$FIRSTVAR
+LASTSUBST=$MIDDLE test

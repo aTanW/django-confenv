@@ -1,0 +1,11 @@
+DATABASE_URL=postgres://user:access@db.example.com:5432/test
+DB1_URL=pgsql://user1:access1@db1.example.com:5432/test1
+DB2_URL=ldap://user:access@ldap.example.com/searchdnhere
+CACHE_URL=dummycache://
+CACHE2_URL=rediscache://user3:access3@redis.example.com/10
+SEARCH_URL=simple://
+SEARCH2_URL=solr://search.example.com:8983/solr/greatsite/select/q=*.*
+EMAIL_URL=dummymail://
+EMAIL2_URL=smtps://user4:access4@mta.example.com
+EMAIL3_URL=smtp+tls://user5:access5@mta1.example.com
+

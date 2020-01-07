@@ -137,6 +137,8 @@ Full list of supported types you can find later in this file.
     # this will assign True to variable debug, if
     #   environment variable DEBUG value in
     #   ('true', 'on', 'ok', 'y', 'yes', 'yea', '1')
+    #   Other value or variable absence will assign
+    #   False value.
     DEBUG = env('DEBUG')
 
     # you can directly point Env to conversion you
@@ -451,7 +453,7 @@ it into standard django config structures.
 
     # django's search extension
     HAYSTACK_CONNECTIONS = {
-      'default': db.search_url('SEARCHENGINE', 'simple://'),
+      'default': env.search_url('SEARCHENGINE', 'simple://'),
     }
 
 

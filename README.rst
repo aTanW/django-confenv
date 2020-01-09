@@ -254,6 +254,13 @@ There is additional convertors for django applications.
     # djangosite.env
     #
 
+    # Applications list
+    #   We can add applications to django's standard
+    #   list in this way.
+    APPADD=django.contrib.humanize
+    APPADD=$APPADD,django.contrib.syndication
+    APPADD=$APPADD,bs3base,testapp,myapp
+
     # Database URL
     #   This variable value can be parsed as database
     #   configuration for django project. Env will
@@ -429,6 +436,12 @@ it into standard django config structures.
     env.readfile(filename='djangosite')
 
     DEBUG = env.bool('DEBUG', True)
+
+    # use "untyped" variable as list to extend
+    #   django's default
+    INSTALLED_APPS = [
+      # ... standard django's list ...
+    ] + env.list('APPADD', [])
 
     # ...
 

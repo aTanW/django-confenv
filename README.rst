@@ -11,7 +11,7 @@ NOTE, that, despite name, you can use django-confenv in *ANY* Python
 project, without activating any django-related stuff.
 
 **django-confenv** is heavily reconstructed version of django-environ_
-by `Daniele Faraglia`_ and `other authors`_. Differences from that code are:
+by `Daniele Faraglia`_ and `other authors`_ . Differences from that code are:
 
   - higher speed (sometimes much higher)
   - smaller code
@@ -22,7 +22,7 @@ by `Daniele Faraglia`_ and `other authors`_. Differences from that code are:
   - separated basic tests for base and django functionality
 
 **django-confenv** is (C) 2019,2020 Vitaly Protsko <me@protsko.expert>
-Released under GPLv3. If you need this code under other license, please,
+Released under GPLv3_ . If you need this code under other license, please,
 contact the author.
 
 
@@ -484,11 +484,12 @@ source pypi.org
 Credits
 -------
 
-This code is (c) Vitaly Protsko <me@protsko.expert>, under GPLv3.
+This code is (c) Vitaly Protsko <me@protsko.expert>, under GPLv3_ .
 
 This work is based on django-environ_ (c) `Daniele Faraglia`_
 which includes work from `other authors`_ .
 
+.. _GPLv3: https://www.gnu.org/licenses/gpl-3.0.html
 .. _12factor: http://www.12factor.net/
 .. _`Twelve-factor methodology`: http://www.12factor.net/
 .. _django-environ: https://github.com/joke2k/django-environ

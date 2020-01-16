@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # confenv/__init__.py - maintain program configuration in environment variables
-# (c) 2019 Vitaly Protsko <villy@sft.ru>
+# (c) 2019 Vitaly Protsko <me@protsko.expert>
 # Licensed under GPLv3
 #
 # code is a rework of django-environ Copyright (c) 2013-2017, Daniele Faraglia
@@ -16,7 +16,7 @@ variables, with optional initialization from named file.
 
 __all__ = ('Env', 'Path', 'pyCompat', )
 
-VERSION = '0.9.4'
+VERSION = '0.9.5'
 __author__ = 'Vitaly Protsko'
 __version__ = tuple(VERSION.split('.'))
 

@@ -4,3 +4,4 @@ export TESTEXPORT=value
 FIRSTVAR=firstval
 MIDDLE=$FIRSTVAR
 LASTSUBST=$MIDDLE test
+unset FILLER

@@ -16,7 +16,7 @@ variables, with optional initialization from named file.
 
 __all__ = ('Env', 'Path', 'pyCompat', )
 
-VERSION = '0.9.5'
+VERSION = '0.9.6'
 __author__ = 'Vitaly Protsko'
 __version__ = tuple(VERSION.split('.'))
 
@@ -455,7 +455,7 @@ class Env(object):
       while line:
         line = line.strip()
         if len(line):
-          if not line.startswith('#'):
+          if not (line.startswith('#') and line.startswith('unset')):
             if line.startswith('export'): line = line[6:].strip()
 
             i = line.find('=')

@@ -193,6 +193,9 @@ Here is all supported data types collected in example
     #   for application and accompanying shell scripts
     export DEBUG=no
 
+    #   lines with "unset" keyword are silently ignored
+    unset APP_DEBUG
+
     # str variable
     #   Any sequence of characters. This is effectively
     #   the same, as unicode type, look below for

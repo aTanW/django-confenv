@@ -155,7 +155,7 @@ Full list of supported types you can find later in this file.
     #     not an instance of side class
 
     # use substituted var, but back it with default value
-    CACHE = env('CACHEDIR', '/var/cache')
+    CACHE = env('CACHEDIR', default='/var/cache')
 
     # complex json is also not a problem
     PARAMS = env.json('PARAMETERS', "{'par1':'val1', 'par2': {'def': 1, 'set': 2}, 'par3': [1, 2]}")
@@ -375,16 +375,16 @@ NB: Here is nuance with naming variable type in declarations
     textWelcome = env.bytes('WELCOMEMSG', 'Welcome !')
     # assigned value str 'Добро пожаловать!'
 
-    paramPort = env('PORT', 4321)
+    paramPort = env('PORT', default=4321)
     # assigned value int 1234
 
-    paramLoad = env('MAXAVGLOAD', 10.0)
+    paramLoad = env('MAXAVGLOAD', default=10.0)
     # assigned value float 5.5
 
-    paramListen = env('LISTENIP', [ '0.0.0.0' ])
+    paramListen = env('LISTENIP', default=[ '0.0.0.0' ])
     # assigned value [ '127.0.0.1', '192.168.1.1', '10.0.0.1' ]
 
-    progServices = env('ENDPOINTS', ('start', 'stop'))
+    progServices = env('ENDPOINTS', default=('start', 'stop'))
     # assigned value tuple('start', 'read', 'calculate', 'write', 'stop')
 
     paramACL = env('USERACL')

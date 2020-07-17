@@ -378,6 +378,9 @@ NB: Here is nuance with naming variable type in declarations
     paramPort = env('PORT', default=4321)
     # assigned value int 1234
 
+    paramNextPort = env.PORT + 1
+    # yes, all parameters are accessible as object attribute
+
     paramLoad = env('MAXAVGLOAD', default=10.0)
     # assigned value float 5.5
 
@@ -398,6 +401,15 @@ NB: Here is nuance with naming variable type in declarations
 
     urlLogo = env('EXTLOGO')
     # assigned value ParseResult(scheme='http', netloc='image.bigproject.com', path='/biglogo.jpg', params='', query='', fragment='')
+
+    config = {}
+    config.update(env)
+    # you can use items() keys() and values() to access raw content of
+    # env.data
+
+    for k, v in env:
+      print('{}={}'.format(k, v))
+    # access to all 'raw' values
 
 
 For django project settings.py Env can generate complete configuration

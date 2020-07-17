@@ -86,6 +86,16 @@ class baseTestCase(TestCase):
     ei = self.base(filename='test')
     self.assertTrue(ei('LASTSUBST') == 'firstval test', 'Bad variable substitution')
 
+  def test_07_attrs(self):
+    'Checking [Env] attribute access'
+    ei = self.base(filename='test')
+    self.assertTrue(ei.TESTKEY == 'testvalue', 'Bad item access as attribute')
+
+  def test_08_dictlike(self):
+    'Checking [Env] dict-like interface'
+    ei = self.base(filename='test')
+    k = ei.keys()
+    self.assertTrue('TESTKEY' in k, 'Bad dict keys() emulation')
 
 
 # EOF confenv/tests/baseTest.py

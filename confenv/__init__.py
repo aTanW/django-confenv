@@ -16,7 +16,7 @@ variables, with optional initialization from named file.
 
 __all__ = ('Env', 'Path', 'pyCompat', )
 
-VERSION = '0.9.7'
+VERSION = '0.9.8'
 __author__ = 'Vitaly Protsko'
 __version__ = tuple(VERSION.split('.'))
 
@@ -207,9 +207,19 @@ class Env(object):
     self.defaults = defaults
     self.readfile()
 
+    setattr(self, 'keys', Env.data.keys)
+    setattr(self, 'values', Env.data.values)
+    setattr(self, 'items', Env.data.items)
+    setattr(self, '__iter__', Env.data.__iter__)
+
 
   def __contains__(self, var):
     return var in self.data
+
+
+  def __getattr__(self, key):
+    if key in self.data: return self(key)
+    return object.__getattr__(self, key)
 
 
   def __call__(self, var, cast=None, default=nodata, parse_default=False):

@@ -15,7 +15,7 @@ with open("README.rst", "r") as fh:
 
 setup(
   name='django-confenv',
-  version='0.9.8',
+  version='0.9.9',
 
   url='https://gihhub.com/aTanW/django-confenv',
   description='Optimized app config (+Django) from environment vars and/or files',

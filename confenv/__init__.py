@@ -16,7 +16,7 @@ variables, with optional initialization from named file.
 
 __all__ = ('Env', 'Path', 'pyCompat', )
 
-VERSION = '0.9.8'
+VERSION = '0.9.9'
 __author__ = 'Vitaly Protsko'
 __version__ = tuple(VERSION.split('.'))
 
@@ -220,6 +220,18 @@ class Env(object):
   def __getattr__(self, key):
     if key in self.data: return self(key)
     return object.__getattr__(self, key)
+
+  def __setattr__(self, key, val):
+    if key in self.data:
+      self.data[key] = val
+    else:
+      object.__setattr__(self, key, val)
+
+  def __getitem__(self, key):
+    return self(key)
+
+  def __setitem__(self, key, val):
+    self.data[key] = val
 
 
   def __call__(self, var, cast=None, default=nodata, parse_default=False):

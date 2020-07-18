@@ -90,12 +90,16 @@ class baseTestCase(TestCase):
     'Checking [Env] attribute access'
     ei = self.base(filename='test')
     self.assertTrue(ei.TESTKEY == 'testvalue', 'Bad item access as attribute')
+    ei.TESTVAR = 'testvar'
+    self.assertTrue(ei.TESTVAR == 'testvar', 'Bad attribute assignment')
 
   def test_08_dictlike(self):
     'Checking [Env] dict-like interface'
     ei = self.base(filename='test')
     k = ei.keys()
     self.assertTrue('TESTKEY' in k, 'Bad dict keys() emulation')
-
+    ei['TESTVAR'] = 'testvar'
+    self.assertTrue(ei['TESTVAR'] == 'testvar', 'Bad item assignment')
+    
 
 # EOF confenv/tests/baseTest.py

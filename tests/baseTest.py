@@ -84,7 +84,7 @@ class baseTestCase(TestCase):
   def test_06_varsubst(self):
     'Checking [Env] variable substitution'
     ei = self.base(filename='test')
-    self.assertTrue(ei('LASTSUBST') == 'firstval test', 'Bad variable substitution')
+    self.assertTrue(ei('LASTSUBST') == 'firstval/middle test', 'Bad variable substitution')
 
   def test_07_attrs(self):
     'Checking [Env] attribute access'

@@ -2,6 +2,6 @@
 TESTKEY=testvalue
 export TESTEXPORT=value
 FIRSTVAR=firstval
-MIDDLE=$FIRSTVAR
+MIDDLE=$FIRSTVAR/middle
 LASTSUBST=$MIDDLE test
 unset FILLER

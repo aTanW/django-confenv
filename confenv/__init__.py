@@ -16,7 +16,7 @@ variables, with optional initialization from named file.
 
 __all__ = ('Env', 'Path', 'pyCompat', )
 
-VERSION = '0.9.9'
+VERSION = '1.0.0'
 __author__ = 'Vitaly Protsko'
 __version__ = tuple(VERSION.split('.'))
 
@@ -245,6 +245,7 @@ class Env(object):
     :returns: Value from environment or default (if set)
     """
 
+    isDefault = False
     if var in self.defaults:
       scheme = self.defaults[var]
 
@@ -265,13 +266,14 @@ class Env(object):
         _msg  = 'Environment variable "' + var + '" is not set, but required.'
         raise self.exception(_msg)
       result = default
+      isDefault = True
 
     if hasattr(result, 'startswith') and result.startswith('$'):
       ix=1
       ln = len(result)
       while ix < ln and result[ix].isidentifier():
         ix += 1
-      result = self(result[1:ix], cast=cast, default=default) + result[ix:]
+      result = self(result[1:ix], cast=cast, default=default if not isDefault else self.nodata) + result[ix:]
 
     if cast is None and default is not None and not isinstance(default, NoValue):
       cast = type(default)
